@@ -9,7 +9,7 @@ spec:
   - image: soap30/task1jenk
     name: task1
     env:
-     - name: YOUR_NAME
+      - name: YOUR_NAME
         value: QA-Kubernetes
 ---
 apiVersion: v1
