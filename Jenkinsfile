@@ -9,7 +9,6 @@ pipeline {
             }
 
         }
-
         stage('Push') {
             steps {
                 sh '''
@@ -18,13 +17,12 @@ pipeline {
             }
 
         }
-
         stage('Deploy') {
             steps {
                 sh '''
                 docker stop task1 && echo "Stopped task1" || echo "task1 is not running"
-                docker rm task1 && echo "remove task1" || echo "task1 does not exist"
-                docker run -d -p 80:5500 --name task1 soap30/task1newjenk
+                docker rm task1 && echo "removed task1" || echo "task1 does not exist"
+                docker run -d -p 80:5500 --name task1 soap30/task1newjenk                
                 '''
             }
 
