@@ -1,15 +1,10 @@
 pipeline {
     agent any
+    environment {
+        YOUR_NAME = credentials("YOUR_NAME)
+    }
     stages {
         stage('Build') {
-            steps {
-                sh '''
-                docker build -t soap30/task1newjenk .
-                '''
-            }
-
-        }
-        stage('Push') {
             steps {
                 sh '''
                 docker push soap30/task1newjenk
